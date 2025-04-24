@@ -63,8 +63,10 @@ def webhook():
                                     send_text_message(phone, "PG MTech: Choose from AI, VLSI, Thermal Engg.")
 
         return "OK", 200
-
-
+@app.route("/")
+def home():
+    return "WhatsApp bot is up and running!", 200
+    
 def send_button_message(phone):
     url = f"https://graph.facebook.com/v19.0/{PHONE_NUMBER_ID}/messages"
     headers = {
